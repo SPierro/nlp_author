@@ -19,14 +19,14 @@ You need to have a Python distrubution installed. In this case I used Python 3.7
 
 ## Files Information
 
-* The folder "Test_modèle" contains the text visualisation, the text exploration and the test of few algorithms
+* The folder "Test_modèle" contains Scripts for the text visualisation, the text exploration and to test few algorithms
 * The fodler "Model" contains the blueprint for the Flask API, the script to train the model and the prediction model
-* The script ro un the app: run.py
+* The script ro run the app: run.py
 
 ## How to use it
 
-### Installation & Building of the Model
-Every Librairies (except one) needed are listed in the requirements.txr files.
+### Installation & Model Construction
+Each Librairies needed (except one) are listed into the requirements.txr file.
 Thus, just run in your terminal the following line:
   $ pip install -r requirements.txt
 
@@ -40,7 +40,7 @@ To launch the Flask API, just run:
   $ python run.py
 
 ### Flask API
-Once the API launch, check if it's running by going to port:
+Once the API launch, check if it's running by going to port 5000:
 http://http://localhost:5000/
 
 If yes, go to http://http://localhost:5000/upload/ and upload a TEXT FILE.
@@ -49,7 +49,7 @@ You should be returned a JSON file with the prediction and the accuracy relative
 
 ## Production 
 
-A Docker File has been chose as the easiest solution to deploy the model.
+A Docker File has been chosen as the easiest solution to deploy the model.
 
 ### Prerequisites
 For the Windows user, you need to install Docker Toolbox ( https://docs.docker.com/toolbox/toolbox_install_windows/ )
@@ -61,13 +61,13 @@ You will then have to build an image of our app inside the Docker Terminal:
 Then, run the image:
   $ docker run -p 8888:5000 NLP_project
   
-You can then go to your localhost:8888/ and use the App.
-For information for the Windows user you can find your localhost with:
+You can now go to your localhost:8888/ and use the App.
+For the Windows user you can find your localhost with:
   $ docker-machine ip default
 
 To push your image to the Docker Hub:
   $ docker tag NLP_project:latest pierrosmn/test_agilytic:latest
-	$ docker push pierrosmn/test_agilytic:latest
+  $ docker push pierrosmn/test_agilytic:latest
 
 ### Deploy the image to Heroku
 * Install Heroku CLI
